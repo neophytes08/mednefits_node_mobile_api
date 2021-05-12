@@ -1,0 +1,112 @@
+{
+  "name": "express-mongoose-es6-rest-api",
+  "version": "0.0.1",
+  "description": "A Boilerplate application for building REST APIs using express, mongoose in ES6 with code coverage",
+  "author": "Harry <harry@empatkali.co.id>",
+  "main": "index.js",
+  "private": false,
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0",
+    "yarn": ">=1.5.1"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "start:dev": "./node_modules/.bin/nodemon index.js",
+    "start:debug": "cross-env DEBUG=express-mongoose-es6-rest-api:* yarn start",
+    "lint": "esw *.js server config --color",
+    "lint:watch": "yarn lint -- --watch",
+    "precommit": "lint-staged",
+    "test": "cross-env NODE_ENV=test ./node_modules/.bin/mocha --ui bdd --reporter spec --colors server --recursive",
+    "test:watch": "yarn test -- --watch",
+    "test:coverage": "cross-env NODE_ENV=test ./node_modules/.bin/istanbul cover _mocha -- --ui bdd --reporter spec --colors server --recursive",
+    "test:check-coverage": "yarn test:coverage && istanbul check-coverage",
+    "report-coverage": "coveralls < ./coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kudaponilari/empatkali_new_payment.git"
+  },
+  "keywords": [
+    "express",
+    "node",
+    "node.js",
+    "mongodb",
+    "mongoose",
+    "es6",
+    "mocha",
+    "istanbul",
+    "REST",
+    "API",
+    "boilerplate"
+  ],
+  "dependencies": {
+    "acl": "0.4.11",
+    "axios": "0.21.0",
+    "bluebird": "3.5.1",
+    "body-parser": "1.18.2",
+    "compression": "1.7.2",
+    "cookie-parser": "1.4.3",
+    "cors": "2.8.4",
+    "debug": "^2.4.5",
+    "dotenv": "^4.0.0",
+    "express": "4.17.1",
+    "express-async-errors": "3.1.1",
+    "express-unless": "0.5.0",
+    "express-validation": "1.0.2",
+    "express-winston": "4.0.5",
+    "generate-password": "1.5.1",
+    "glob": "7.1.6",
+    "helmet": "3.12.0",
+    "http-status": "1.0.1",
+    "ip-range-check": "false0.2.0",
+    "joi": "10.6.0",
+    "jwt-redis": "6.0.0",
+    "lodash": "4.17.15",
+    "method-override": "^2.3.10",
+    "moment": "2.29.1",
+    "mongoose": "4.7.4",
+    "morgan": "1.9.0",
+    "nodemailer": "6.3.0",
+    "owasp-password-strength-test": "1.3.0",
+    "qrcode": "false1.4.4",
+    "redis": "3.0.2",
+    "request": "2.88.0",
+    "socket.io": "3.0.3",
+    "socket.io-client": "3.0.3",
+    "speakeasy": "2.0.0",
+    "validator": "10.11.0",
+    "winston": "3.3.3"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "commitizen": "^2.9.6",
+    "coveralls": "^3.0.0",
+    "cross-env": "5.1.4",
+    "cz-conventional-changelog": "1.2.0",
+    "eslint": "3.16.1",
+    "eslint-config-airbnb-base": "7.1.0",
+    "eslint-plugin-import": "1.16.0",
+    "eslint-watch": "2.1.14",
+    "husky": "4.3.0",
+    "istanbul": "1.1.0-alpha.1",
+    "lint-staged": "10.5.2",
+    "mocha": "3.5.0",
+    "nodemon": "2.0.3",
+    "prettier": "2.0.5",
+    "supertest": "3.0.0",
+    "supertest-as-promised": "4.0.2",
+    "validate-commit-msg": "^2.14.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  },
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
